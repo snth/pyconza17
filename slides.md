@@ -254,28 +254,26 @@ Highlight
 
 -------------------------------------------------------------------------------
 
--> # click and CLIs
+-> # CLIs
 
 <br>
-## CLIs
-
-  <br>
-  * `Command Line Interfaces`
+## Command Line Interfaces
 
   <br>
   * Reputation as `arcane` and `geeky`
 
   <br>
-  * ==> 40 years of bad branding
+  * --> 40 years of bad branding
 
   <br>
   * Rebrand these in line with current trends as *Chatbot Like Interface*!
 
-<br>
-## Click
+-------------------------------------------------------------------------------
 
-  <br>
-  * `Command Line Interface Creation Kit`
+-> # Click
+
+<br>
+## Command Line Interface Creation Kit
 
   <br>
   * Lots of features for quickly creating useful interfaces
@@ -284,3 +282,50 @@ Highlight
       * parameter validation
       * arbitrary nesting of commands
       * supports lazy loading of subcommands at runtime
+
+-------------------------------------------------------------------------------
+
+-> # Click
+
+## Basic Example
+
+<br>
+
+    import click
+
+    @click.command()
+    @click.option('--count', default=1, help='Number of greetings.')
+    @click.option('--name', prompt='Your name', help='The person to greet.')
+    def hello(count, name):
+        """Simple program that greets NAME for a total of COUNT times."""
+        for x in range(count):
+            click.echo('Hello {}!'.format(name))
+
+    if __name__=='__main__':
+        hello()
+
+<br>
+Run with `--help` for help on running the command.
+
+    <br>
+    python click_example.py --help
+
+<br>
+and then
+
+    <br>
+    python click_example.py --name 'PyconZA 2017' --count 3
+
+-------------------------------------------------------------------------------
+
+-> # Click
+
+## Setuptools integration
+
+<br>
+See [http://github.com/snth/numismatic/setup.py](github.com/snth/numismatic.py)
+
+<br>
+Then easily install with
+
+    pip install -e .
