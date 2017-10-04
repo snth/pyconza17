@@ -69,3 +69,34 @@ Highlight
 
   <br>
   * *Build a CLI* for collecting *cryptocurrency* data for fun and profit!
+
+-------------------------------------------------------------------------------
+
+# Python 3 features
+
+<br>
+*f-strings*
+
+  <br>
+  * Let's look at bash snipped I use in my deployments:
+    <br> 
+
+    LATEST_RELEASE=$(curl -s -X GET http://$(REGISTRY_URL)/v2/$(IMAGE)/tags/list \
+        | jq -r ".tags[]" \
+        | grep -E $(REGEXP_RELEASE) \
+        | sort -V \
+        | tail -n )
+
+      <br>
+      * Gets the job done but not very reusable.
+
+      <br>
+      * However one advantage is that the URL is more readable than
+        `'http://{}/v2/{}/tags/list'.format(REGISTRY_URL, IMAGE)`
+
+      <br>
+      * With *f-strings* this becomes much better:
+
+    from subprocess import call
+    call(f'curl -s -X GET http://{REGISTRY_URL}/v2/{IMAGE}/tags/list')
+
