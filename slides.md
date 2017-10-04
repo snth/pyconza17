@@ -159,7 +159,14 @@ Highlight
 ## testing
 
     <br>
+    q = p / 'newdir'
+    q
+
+    <br>
     p.exists()
+
+    <br>
+    q.exists()
 
     <br>
     p.is_dir()
@@ -200,10 +207,6 @@ Highlight
 *pathlib* examples (4)
 
 ## object creation
-
-    <br>
-    q = p / 'newdir'
-    q
 
     <br>
     q.exists()
@@ -248,3 +251,36 @@ Highlight
 
     <br>
     q.exists()
+
+-------------------------------------------------------------------------------
+
+-> # click and CLIs
+
+<br>
+## CLIs
+
+  <br>
+  * `Command Line Interfaces`
+
+  <br>
+  * Reputation as `arcane` and `geeky`
+
+  <br>
+  * ==> 40 years of bad branding
+
+  <br>
+  * Rebrand these in line with current trends as *Chatbot Like Interface*!
+
+<br>
+## Click
+
+  <br>
+  * `Command Line Interface Creation Kit`
+
+  <br>
+  * Lots of features for quickly creating useful interfaces
+
+      * automatic help page generation
+      * parameter validation
+      * arbitrary nesting of commands
+      * supports lazy loading of subcommands at runtime
