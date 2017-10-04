@@ -15,18 +15,20 @@
                      ||     ||
     
 
----
+-------------------------------------------------------------------------------
 
 # Background
 
 <br>
   * Found myself spending a lot of time looking up bash syntax:
+
   <br>
       * Why do I need to use `[[ condition ]]` instead of 
         `[ condition ]` again?
 
   <br>
   * Conclusion?
+
   <br>
       * I suck at shell scripting!
     
@@ -43,4 +45,27 @@
   * Found that: 
   
   <br>
-      * *Python is awesome for shell scripting!*
+      * *Python (3) is awesome for shell scripting!*
+
+-------------------------------------------------------------------------------
+
+# Objectives
+
+Highlight
+
+  * *Python 3 features*
+
+      <br>
+      * _f-strings_
+
+      <br>
+      * _pathlib_
+
+  <br>
+  * The *click* library
+
+      <br>
+      * A replacement for `argparse`, `optparse` and more
+
+  <br>
+  * *Build a CLI* for collecting *cryptocurrency* data for fun and profit!
