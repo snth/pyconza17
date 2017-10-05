@@ -19,14 +19,11 @@
 
 -> # Background
 
-<br>
   * Found myself spending a lot of time looking up bash syntax:
 
-  <br>
       * Why do I need to use `[[ condition ]]` instead of 
         `[ condition ]` again?
 
-  <br>
   * Conclusion?
 
   <br>
@@ -35,13 +32,14 @@
   <br>
 > Python is a good scripting language
 
-  <br>
   * So why am I not using it for shell scripting?
 
-  <br>
-  * Decided to investigate what's available.
+      <br>
+      * Impedance mismatch
 
   <br>
+  * Decided to investigate current shell scripting/CLI support:
+
   * Found that: 
   
   <br>
@@ -51,45 +49,40 @@
 
 -> # Objectives
 
-<br>
 Highlight
 
   * *Python 3 features*
 
-      <br>
       * `f-strings`
 
-      <br>
       * `pathlib`
 
   <br>
   * The *click* library
 
-      <br>
+      * Makes writing a CLI easy and fun!
+
       * A replacement for `argparse`, `optparse` and more
 
   <br>
   * *Build a CLI* for collecting *cryptocurrency* data for fun and profit!
 
-      <br>
       * Learn about
-          <br>
+
           * *asyncio*
-          <br>
+
           * *attrs*
-          <br>
+
           * *streamz*
 
 -------------------------------------------------------------------------------
 
 -> # Python 3 features
 
-<br>
 *f-strings*
 
   <br>
   * Let's look at bash snippet I use in my deployments:
-    <br> 
 
     LATEST_RELEASE=$(curl -s -X GET http://$(REGISTRY_URL)/v2/$(IMAGE)/tags/list \
         | jq -r ".tags[]" \
@@ -114,7 +107,6 @@ Highlight
 
 -> # Python 3 features
 
-<br>
 *pathlib*
 
   <br>
@@ -123,19 +115,17 @@ Highlight
     <br>
     * `os.path`\`s procedural API had long felt clunky to me.
 
-    <br>
     * *pathlib* is awesome!
 
 -------------------------------------------------------------------------------
 
 -> # Python 3 features
 
-<br>
 *pathlib* examples (1)
 
-<br>
 ## paths
 
+    <br>
     from pathlib import Path
     p = Path('.')
     p
@@ -144,53 +134,41 @@ Highlight
     str(p)
     str(p.absolute())
 
-    <br>
     p = p.absolute()
     p.as_posix()
 
-    <br>
     p.as_uri()
 
-    <br>
     p.parent
 
-    <br>
     p.relative_to(p.parent)
 
 -------------------------------------------------------------------------------
 
 -> # Python 3 features
 
-<br>
 *pathlib* examples (2)
 
-<br>
-## testing
+## interrogating paths
 
-    <br>
     q = p / 'newdir'
     q
 
     <br>
     p.exists()
 
-    <br>
     q.exists()
 
-    <br>
     p.is_dir()
 
-    <br>
     p.is_file()
  
 -------------------------------------------------------------------------------
 
 -> # Python 3 features
 
-<br>
 *pathlib* examples (3)
 
-<br>
 ## navigation
 
   <br>
@@ -212,64 +190,70 @@ Highlight
 
 -> # Python 3 features
 
-<br>
 *pathlib* examples (4)
 
 ## object creation
 
-    <br>
+  <br>
+  * directories
+
     q.exists()
 
-    <br>
     q.mkdir()
 
-    <br>
     q.exists()
 
-    <br>
+  <br>
+  * files
+
     fp = n / 'newfile.txt'
     fp
 
-    <br>
     with fp.open('wt') as f:
         f.write('The quick brown fox jumped over the lazy dog.')
 
-    <br>
     fp.exists() and fp.is_file()
 
-    <br>
     fp.read_text()
 
 -------------------------------------------------------------------------------
 
 -> # Python 3 features
 
-<br>
 *pathlib* examples (5)
 
 ## object removal
 
-    <br>
+  <br>
+  * files
+
     fp.unlink()
 
-    <br>
     fp.exists()
 
-    <br>
+    * My only bugbear: why is there no
+
+        fp.rm()
+
+        fp.remove()
+    
+        fp.delete()
+
+  <br>
+  * directories
+
     q.rmdir()
 
-    <br>
     q.exists()
 
 -------------------------------------------------------------------------------
 
 -> # CLIs
 
-<br>
 ## Command Line Interfaces
 
   <br>
-  * Reputation as `arcane` and `geeky`
+  * Reputation as `arcane` and `difficult`
 
   <br>
   * --> 40 years of bad branding
@@ -277,23 +261,22 @@ Highlight
   <br>
   * Rebrand these in line with current trends as *Chatbot Like Interface*!
 
+      <br>
+      * Only half joking: use text to interact with your application!
+
 <br>
 ## I like them!
 
-  <br>
   * Encourage compositional/functional thinking
 
-  <br>
   * Do one thing well
 
-  <br>
   * Great for automating non-regular tasks
 
 -------------------------------------------------------------------------------
 
 -> # Click
 
-<br>
 ## Command Line Interface Creation Kit
 
   <br>
@@ -327,10 +310,8 @@ Highlight
 <br>
 Then run it
 
-    <br>
     python examples/greet.py
 
-    <br>
     python examples/greet.py --name 'PyconZA 2017' --count 3
 
 -------------------------------------------------------------------------------
@@ -339,7 +320,6 @@ Then run it
 
 ## Setuptools integration
 
-<br>
 See [http://github.com/snth/numismatic/setup.py](github.com/snth/numismatic.py)
 
 <br>
@@ -355,16 +335,16 @@ Then easily install with
 
   * Collect *cryptocurrency* prices
 
+  <br>
   * Try out
 
-      <br>
       * *asyncio*
 
-      <br>
       * *attrs*
 
-      <br>
       * *streamz*
+
+      * *websockets*
 
 -------------------------------------------------------------------------------
 
@@ -372,11 +352,17 @@ Then easily install with
 
 *streamz*
 
+  * Small library by Mathew Rocklin (creator of `dask`) for trying out
+    stream based/reactive event processing in pure Python.
+
+  * Self-contained with few dependencies
+
+  * Test stream based dataflow before deploying `Kafka`, `Flink`, ...
+
     <br>
     from streamz import Stream
     source = Stream()
 
-    <br>
     source.emit('hello')
     source.emit('world')
 
@@ -397,14 +383,12 @@ Then easily install with
 
 *attrs*
 
-  <br>
   * I think of it as better *namedtuples*
 
-  <br>
   * Classes without the boilerplate
 
   <br>
-    * Look at `numismatic/events.py`
+  * Look at `numismatic/events.py`
     
     <br>
     @attr.s(slots=True)
@@ -429,7 +413,6 @@ Then easily install with
 
 *asyncio*
 
-  <br>
   * Good tutorials out there.
 
   * I found these helpful:
@@ -444,27 +427,45 @@ Then easily install with
 
 *Example*
 
-    <br>
+  <br>
+  * Set up our streams
+
     from streamz import Stream
     source = Stream()
     printer = source.map(print)
     L = []
     collector = source.map(L.append)
 
-    <br>
+  <br>
+  * Prepare our connection
+
     from numismatic.exchanges import BitfinexExchange
     bfx = BitfinexExchange(source)
     subscription = bfx.listen('BTCUSD', 'trades')
 
-    <br>
+  <br>
+  * Run the event loop
+
     import asyncio
     loop = asyncio.get_event_loop()
     future = asyncio.wait([subscription], timeout=10)
     loop.run_until_complete(future)
 
-Run
+-------------------------------------------------------------------------------
 
-    python examples/numismatic.py
+-> # Numismatic
+
+## *coin* CLI
+
+  * Install
+
+    git clone https://github.com/snth/numismatic.git
+    cd numismatic
+    pip install -e .
+
+  * Run without arguments for help (or with `--help`)
+
+    coin
 
 -------------------------------------------------------------------------------
 
