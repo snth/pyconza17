@@ -289,8 +289,7 @@ Highlight
 
 ## Basic Example
 
-<br>
-
+    <br>
     import click
 
     @click.command()
@@ -305,13 +304,10 @@ Highlight
         hello()
 
 <br>
-Run with `--help` for help on running the command.
+Then run it
 
     <br>
-    python examples/greet.py --help
-
-<br>
-and then
+    python examples/greet.py
 
     <br>
     python examples/greet.py --name 'PyconZA 2017' --count 3
@@ -329,3 +325,28 @@ See [http://github.com/snth/numismatic/setup.py](github.com/snth/numismatic.py)
 Then easily install with
 
     pip install -e .
+
+-------------------------------------------------------------------------------
+
+-> # Closing
+
+## We're hiring!
+
+  * Go to *https://bitbucket.org/argonasset/opportunities*
+
+## Contact
+
+  * I'm *snth* on `github` and `zatech` slack.
+
+  * Presentation: *github.com/snth/pyconza17*
+  * Numismatic: *github.com/snth/numismatic*
+
+    <br>
+      __________
+    < Questions? >
+      ----------
+            \   ^__^ 
+             \  (oo)\_______
+                (__)\       )\/\
+                    ||----w |
+                    ||     ||
