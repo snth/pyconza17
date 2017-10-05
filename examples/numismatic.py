@@ -1,7 +1,9 @@
 
 from streamz import Stream
-stream = Stream()
-sink = stream.map(print)
+source = Stream()
+printer = source.map(print)
+L = []
+collector = source.map(L.append)
 
 from numismatic.exchanges import BitfinexExchange
 bfx = BitfinexExchange(stream)

@@ -361,7 +361,7 @@ Then easily install with
 
 -> # Numismatic
 
-## streamz
+*streamz*
 
     <br>
     from streamz import Stream
@@ -382,21 +382,37 @@ Then easily install with
     for event in ['hello', 'world']:
         source.emit(event)
 
+-------------------------------------------------------------------------------
+
+-> # Numismatic
+
+*asyncio*
+
+  <br>
+  * Good tutorials out there.
+
+  * I found these helpful:
+
+      * [asyncio — Asynchronous I/O, event loop, and concurrency tools](https://pymotw.com/3/asyncio/)
+
+      * [AsyncIO for the Working Python Developer](https://hackernoon.com/asyncio-for-the-working-python-developer-5c468e6e2e8e)
 
 -------------------------------------------------------------------------------
 
 -> # Numismatic
 
-## Examples
+*Example*
 
     <br>
     from streamz import Stream
-    stream = Stream()
-    sink = stream.map(print)
+    source = Stream()
+    printer = source.map(print)
+    L = []
+    collector = source.map(L.append)
 
     <br>
     from numismatic.exchanges import BitfinexExchange
-    bfx = BitfinexExchange(stream)
+    bfx = BitfinexExchange(source)
     subscription = bfx.listen('BTCUSD', 'trades')
 
     <br>
@@ -408,7 +424,6 @@ Then easily install with
 Run
 
     python examples/numismatic.py
-
 
 -------------------------------------------------------------------------------
 
