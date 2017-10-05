@@ -333,7 +333,7 @@ Then easily install with
 
 ## Motivation
 
-  * Collect *cryptocurrency* prices
+  * Make a CLI to collect *cryptocurrency* data
 
   <br>
   * Try out
@@ -345,6 +345,22 @@ Then easily install with
       * *streamz*
 
       * *websockets*
+
+-------------------------------------------------------------------------------
+
+-> # Numismatic
+
+## *coin* CLI
+
+  * Install
+
+    git clone https://github.com/snth/numismatic.git
+    cd numismatic
+    pip install -e .
+
+  * Run without arguments for help (or with `--help`)
+
+    coin
 
 -------------------------------------------------------------------------------
 
@@ -450,22 +466,6 @@ Then easily install with
     loop = asyncio.get_event_loop()
     future = asyncio.wait([subscription], timeout=10)
     loop.run_until_complete(future)
-
--------------------------------------------------------------------------------
-
--> # Numismatic
-
-## *coin* CLI
-
-  * Install
-
-    git clone https://github.com/snth/numismatic.git
-    cd numismatic
-    pip install -e .
-
-  * Run without arguments for help (or with `--help`)
-
-    coin
 
 -------------------------------------------------------------------------------
 
