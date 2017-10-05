@@ -1,5 +1,5 @@
 %title: Building awesome (command line) tools in Python!
-%author: github.com/snth/numismatic
+%author: github.com/snth/pyconza17
 %date: 2017-10-05
 
 
@@ -268,6 +268,18 @@ Highlight
   <br>
   * Rebrand these in line with current trends as *Chatbot Like Interface*!
 
+<br>
+## I like them!
+
+  <br>
+  * Encourage compositional/functional thinking
+
+  <br>
+  * Do one thing well
+
+  <br>
+  * Great for automating non-regular tasks
+
 -------------------------------------------------------------------------------
 
 -> # Click
@@ -325,6 +337,25 @@ See [http://github.com/snth/numismatic/setup.py](github.com/snth/numismatic.py)
 Then easily install with
 
     pip install -e .
+
+-------------------------------------------------------------------------------
+
+-> # Numismatic
+
+## Motivation
+
+  * Collect *cryptocurrency* prices
+
+  * Try out
+
+      <br>
+      * *asyncio*
+
+      <br>
+      * *attrs*
+
+      <br>
+      * *streamz*
 
 -------------------------------------------------------------------------------
 
