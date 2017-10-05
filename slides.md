@@ -57,10 +57,10 @@ Highlight
   * *Python 3 features*
 
       <br>
-      * _f-strings_
+      * `f-strings`
 
       <br>
-      * _pathlib_
+      * `pathlib`
 
   <br>
   * The *click* library
@@ -70,6 +70,15 @@ Highlight
 
   <br>
   * *Build a CLI* for collecting *cryptocurrency* data for fun and profit!
+
+      <br>
+      * Learn about
+          <br>
+          * *asyncio*
+          <br>
+          * *attrs*
+          <br>
+          * *streamz*
 
 -------------------------------------------------------------------------------
 
