@@ -308,13 +308,13 @@ Highlight
 Run with `--help` for help on running the command.
 
     <br>
-    python click_example.py --help
+    python examples/greet.py --help
 
 <br>
 and then
 
     <br>
-    python click_example.py --name 'PyconZA 2017' --count 3
+    python examples/greet.py --name 'PyconZA 2017' --count 3
 
 -------------------------------------------------------------------------------
 
