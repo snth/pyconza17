@@ -386,6 +386,38 @@ Then easily install with
 
 -> # Numismatic
 
+*attrs*
+
+  <br>
+  * I think of it as better *namedtuples*
+
+  <br>
+  * Classes without the boilerplate
+
+  <br>
+    * Look at `numismatic/events.py`
+    
+    <br>
+    @attr.s(slots=True)
+    class Heartbeat:
+        exchange = attr.ib()
+        symbol = attr.ib()
+        timestamp = attr.ib(default=attr.Factory(time.time))
+
+  <br>
+  * Use it as
+
+    from numismatic.events import Heartbeat
+    Heartbeat('bitfinex', 'BTCUSD')
+
+    <br>
+    import attr
+    attr.asdict(Heartbeat('bitfinex', 'BTCUSD'))
+
+-------------------------------------------------------------------------------
+
+-> # Numismatic
+
 *asyncio*
 
   <br>
