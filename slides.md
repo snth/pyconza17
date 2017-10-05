@@ -359,6 +359,59 @@ Then easily install with
 
 -------------------------------------------------------------------------------
 
+-> # Numismatic
+
+## streamz
+
+    <br>
+    from streamz import Stream
+    source = Stream()
+
+    <br>
+    source.emit('hello')
+    source.emit('world')
+
+    <br>
+    printer = source.map(print)
+    for event in ['hello', 'world']:
+        source.emit(event)
+ 
+    <br>
+    L = []
+    collector = source.map(L.append) j
+    for event in ['hello', 'world']:
+        source.emit(event)
+
+
+-------------------------------------------------------------------------------
+
+-> # Numismatic
+
+## Examples
+
+    <br>
+    from streamz import Stream
+    stream = Stream()
+    sink = stream.map(print)
+
+    <br>
+    from numismatic.exchanges import BitfinexExchange
+    bfx = BitfinexExchange(stream)
+    subscription = bfx.listen('BTCUSD', 'trades')
+
+    <br>
+    import asyncio
+    loop = asyncio.get_event_loop()
+    future = asyncio.wait([subscription], timeout=10)
+    loop.run_until_complete(future)
+
+Run
+
+    python examples/numismatic.py
+
+
+-------------------------------------------------------------------------------
+
 -> # Closing
 
 ## We're hiring!
